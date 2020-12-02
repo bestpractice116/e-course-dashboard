@@ -4,6 +4,22 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        inherit: 'inherit'
+
+      },
+      backgroundColor: theme => ({
+        ...theme('colors'),
+        'inputGray': '#F8F9FD',
+        'summarybg': '#F5F6FA',
+      }),
+      spacing: {
+        '108': '27rem',
+        '120': '30rem',
+      },
+      gridTemplateColumns: {
+        // Complex site-specific column configuration
+        'appsmall': 'auto 1fr',
+        'appbig': 'auto 1fr 480px',
 
       },
       gradientColorStops: theme => ({
@@ -14,7 +30,7 @@ module.exports = {
       textColor: theme => theme("colors"),
       textColor: {
         navGray: "#8E92AD",
-        blue: "#3E9AED"
+        logoblue: "#3E9AED"
       }
     },
   },

@@ -10,10 +10,11 @@ export default {
   props: {
     src: {
       type: String,
-      default: "https://picsum.photos/seed/picsum/100/100",
+      default: "https://picsum.photos/seed/picsum/80/80",
     },
     alt: {
       type: String,
+      default: "Profile",
     },
     size: {
       type: Number,
