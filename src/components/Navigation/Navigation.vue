@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col bg-gradient-to-b from-navigationGray to-navigationPurple">
+  <div class="flex flex-col bg-gradient-to-b from-navigationGray to-navigationPurple ">
 
     <div class="px-2 mb-10 mt-10 xl:px-8">
       <router-link to="/" exact class="flex justify-center xl:justify-start items-center py-1 xl:py-3 px-2 xl:px-6 text-logoblue font-semibold">

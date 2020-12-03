@@ -25,7 +25,7 @@
       <div v-if="item.type === 'today_course'" class="mt-4 mb-4">
         <h2 class="font-bold text-lg">Today Course</h2>
         <img :src="item.image" :alt="item.image" class="rounded-lg mt-4 mb-4">
-        <h4 class="font-medium">{{item.name}}</h4>
+        <h4 class="font-medium text-textBlue">{{item.name}}</h4>
         <p class="mb-5 mt-2 text-gray-500 text-sm">This course will help you to become a reliable and skilled {{item.skill}} in this industry.</p>
         <div class="flex justify-between">
           <div class="flex justify-center items-center">
