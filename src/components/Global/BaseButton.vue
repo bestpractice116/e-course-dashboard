@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: "Base Button",
+  name: "BaseButton",
   props: {
     color: {
       type: String,

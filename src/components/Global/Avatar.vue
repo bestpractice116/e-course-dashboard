@@ -17,7 +17,7 @@ export default {
       default: "Profile",
     },
     size: {
-      type: Number,
+      type: String,
     },
   },
 };

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center">
+  <router-link to="/" class="flex items-center">
 
     <div :class="bgcolor" class="flex justify-center items-center w-12 h-10 rounded-lg">
       <IconDynamic :icon="icon" :class="iconcolor" />
@@ -14,7 +14,7 @@
       <IconDynamic icon="arrowRight" />
     </router-link>
 
-  </div>
+  </router-link>
 </template>
 
 <script>

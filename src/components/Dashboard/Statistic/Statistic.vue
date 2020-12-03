@@ -2,7 +2,10 @@
   <div class="flex flex-col border rounded-lg py-4 px-6">
     <div class="flex justify-between">
       <h2 class="font-semibold">Course Statistics</h2>
-      <IconDynamic icon="dots" />
+      <router-link to="/">
+        <IconDynamic icon="dots" />
+      </router-link>
+
     </div>
 
     <Donut class="mt-2" />
@@ -25,11 +28,14 @@
     </div>
 
     <div class="flex justify-between">
-      <IconDynamic icon="dots" />
-      <div class="flex items-center">
+      <router-link to="/">
+        <IconDynamic icon="dots" />
+      </router-link>
+
+      <router-link to="/" class="flex items-center">
         <span class="font-semibold mr-2 text-sm xl:text-base">Details</span>
         <IconDynamic icon="arrowRight" />
-      </div>
+      </router-link>
     </div>
 
   </div>
