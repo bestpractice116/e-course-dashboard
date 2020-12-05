@@ -29,7 +29,7 @@ export default {
             enabled: true,
           },
         },
-        colors: ["#EE66BB", "#EDF0F5"],
+        colors: ["#EE66BB", "#ebeef4"],
         dataLabels: {
           enabled: false,
         },
@@ -62,6 +62,10 @@ export default {
           },
         },
 
+        tooltip: {
+          // fillSeriesColor: true,
+        },
+
         yaxis: {
           labels: {
             style: {
@@ -79,6 +83,16 @@ export default {
         legend: {
           position: "top",
           offsetY: 1,
+          fontWeight: 400,
+          fontSize: "13px",
+
+          labels: {
+            colors: "#a2afc8",
+          },
+          markers: {
+            width: 12,
+            height: 12,
+          },
         },
         fill: {
           opacity: 1,
@@ -90,4 +104,8 @@ export default {
 </script>
 
 <style>
+.apexcharts-tooltip {
+  background: #bebcbc;
+  color: rgb(8, 8, 8);
+}
 </style>

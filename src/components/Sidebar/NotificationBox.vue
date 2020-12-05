@@ -7,9 +7,9 @@
 
     <div class="ml-4 border-b-2 border-gray-100 w-full">
       <h4 class="font-bold">{{name}}</h4>
-      <p class="text-gray-500 text-sm mt-0.5 mb-2"><span class="font-medium text-black">{{person}}</span> {{message}}</p>
+      <p class="text-gray-500 dark:text-gray-200 text-sm mt-0.5 mb-2"><span class="font-medium text-black dark:text-white">{{person}}</span> {{message}}</p>
       <slot name="buttons"></slot>
-      <p class=" text-gray-600 text-sm mb-4">{{date}}</p>
+      <p class=" text-gray-600 dark:text-gray-400 text-sm mb-4">{{date}}</p>
     </div>
 
   </div>

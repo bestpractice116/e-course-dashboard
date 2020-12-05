@@ -3,7 +3,7 @@
 
     <h2 class="font-semibold text-lg">Friends Rank</h2>
 
-    <div class="text-gray-400 flex mt-6 mb-4 text-sm xl:text-base">
+    <div class="text-gray-400 dark:text-gray-300 flex mt-6 mb-4 text-sm xl:text-base">
       <span>No</span>
       <span class="flex-grow ml-19">Name</span>
       <span class="mr-8">Points</span>

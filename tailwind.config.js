@@ -1,6 +1,6 @@
 module.exports = {
   purge: [],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
@@ -42,8 +42,8 @@ module.exports = {
       },
       gradientColorStops: theme => ({
         ...theme("colors"),
-        navigationGray: "rgba(229,232,241,1)",
-        navigationPurple: "rgba(243,226,249,1)"
+        navigationGray: "#ebedf4",
+        navigationPurple: "#faf2fc"
       }),
       textColor: theme => theme("colors"),
       textColor: {

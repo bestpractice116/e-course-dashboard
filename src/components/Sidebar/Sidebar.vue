@@ -1,11 +1,11 @@
 <template>
   <div class="flex flex-col px-12">
 
-    <form action="/" class="flex items-center mt-8 mb-8 bg-inputGray">
+    <form action="/" class="flex items-center mt-8 mb-8 bg-inputGray dark:bg-gray-800">
       <label for="search" class="py-3 px-3">
-        <IconDynamic icon="search" class="text-gray-800" />
+        <IconDynamic icon="search" class="text-gray-800 dark:text-gray-300" />
       </label>
-      <input id="search" type="text" class="w-full bg-inherit outline-none py-3" placeholder="Search...">
+      <input id="search" type="text" class="w-full bg-inherit outline-none py-3 placeholder-gray-500 dark:placeholder-gray-300" placeholder="Search...">
     </form>
 
     <h1 class="font-bold text-xl mb-6">Notifications</h1>
@@ -26,17 +26,17 @@
         <h2 class="font-bold text-lg">Today Course</h2>
         <router-link to="/">
           <img :src="item.image" :alt="item.image" class="rounded-lg mt-4 mb-4">
-          <h4 class="font-medium text-textBlue">{{item.name}}</h4>
+          <h4 class="font-medium text-textBlue dark:text-gray-100">{{item.name}}</h4>
         </router-link>
 
-        <p class="mb-5 mt-2 text-gray-500 text-sm">This course will help you to become a reliable and skilled {{item.skill}} in this industry.</p>
+        <p class="mb-5 mt-2 text-gray-500 dark:text-gray-200 text-sm">This course will help you to become a reliable and skilled {{item.skill}} in this industry.</p>
         <div class="flex justify-between">
           <div class="flex justify-center items-center">
-            <IconDynamic icon="calendar" class="text-gray-500" />
+            <IconDynamic icon="calendar" class="text-gray-500 dark:text-gray-100" />
             <span class="ml-2 text-sm font-medium">{{item.date}}</span>
           </div>
           <div class="flex justify-center items-center">
-            <IconDynamic icon="clock" class="text-gray-500" />
+            <IconDynamic icon="clock" class="text-gray-500 dark:text-gray-100" />
             <span class="ml-2 text-sm font-medium">{{item.hour}}</span>
           </div>
         </div>

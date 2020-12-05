@@ -7,7 +7,7 @@
 
     <div class="flex flex-col flex-grow ml-3">
       <span class="font-bold text-sm">{{number}}</span>
-      <span class="text-gray-500 text-sm">{{name}}</span>
+      <span class="text-gray-500 dark:text-gray-300 text-sm">{{name}}</span>
     </div>
 
     <router-link to="/">

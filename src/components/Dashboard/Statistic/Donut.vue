@@ -11,7 +11,7 @@
         <div class="circle"></div>
       </div>
 
-      <div class="middlepart bg-pink-900 flex justify-center items-center w-12 h-10 rounded-lg">
+      <div class="middlepart bg-gray-100 dark:bg-gray-800 flex justify-center items-center w-12 h-10 rounded-lg">
         <IconDynamic icon="courses" />
       </div>
 
@@ -40,7 +40,7 @@ export default {
 
 div.middlepart {
   /*background: #394264;*/
-  background: rgb(240, 237, 237);
+  /*background: rgb(240, 237, 237);*/
   position: absolute;
   text-align: center;
   font-size: 28px;

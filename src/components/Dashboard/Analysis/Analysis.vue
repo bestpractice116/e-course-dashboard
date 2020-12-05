@@ -5,7 +5,7 @@
       <Graph class="min-h-10" />
     </div>
 
-    <div class="flex flex-col justify-center w-auto py-6 lg:py-0 lg:w-1/4 px-6 rounded-lg bg-summarybg">
+    <div class="flex flex-col justify-center w-auto py-6 lg:py-0 lg:w-1/4 px-6 rounded-lg bg-summarybg dark:bg-gray-800">
 
       <div class="flex justify-between mb-8">
         <h2 class="font-bold">Summary</h2>
