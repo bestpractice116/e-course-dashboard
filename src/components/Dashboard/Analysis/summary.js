@@ -19,7 +19,7 @@ export const summary = {
           course: 68,
           time: 320,
           exam: 38,
-        },
+        }
       ],
     }
   },

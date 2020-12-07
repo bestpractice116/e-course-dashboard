@@ -26,7 +26,7 @@ export const ranks = {
           avatar: "https://picsum.photos/seed/picsum/80/80",
           name: "Red John",
           point: 80,
-        },
+        }
       ],
     }
   },

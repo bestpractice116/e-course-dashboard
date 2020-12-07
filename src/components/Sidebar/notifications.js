@@ -25,7 +25,7 @@ export const notifications = {
           date: "22 Oct, 2020",
           hour: "10 am - 11 am",
           image: "https://picsum.photos/seed/picsum/440/130",
-        },
+        }
       ],
     }
   },

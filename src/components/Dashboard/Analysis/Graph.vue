@@ -15,7 +15,7 @@ export default {
         {
           name: "Materials",
           data: [18, 40, 20, 30, 40, 40, 45, 50],
-        },
+        }
       ],
       chartOptions: {
         chart: {
@@ -45,7 +45,7 @@ export default {
                 width: 200,
               },
             },
-          },
+          }
         ],
         plotOptions: {
           bar: {

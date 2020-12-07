@@ -29,7 +29,7 @@ export const items = {
         {
           name: "Settings",
           icon: "settings",
-        },
+        }
       ],
     }
   },

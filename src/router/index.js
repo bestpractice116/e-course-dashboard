@@ -77,10 +77,10 @@ const routes = [
         name: "Settings",
         component: () =>
           import(/* webpackChunkName: "settings" */ "../views/Settings/Settings.vue"),
-        meta: { description: 'Settings Section' }
-      },
+        meta: { description: 'Settings Section' },
+      }
     ],
-  },
+  }
 ];
 
 

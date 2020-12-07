@@ -79,7 +79,7 @@ import {
   minLength,
   maxLength,
   sameAs,
-  between,
+  between
 } from "vuelidate/lib/validators";
 export default {
   name: "SignUpPage",
