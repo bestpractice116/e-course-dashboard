@@ -14,6 +14,11 @@ module.exports = {
     //"comma-dangle": ["error", "never"],
     "linebreak-style": "off",
     "eol-last": ["error", "never"],
+    "comma-dangle": ["error", {
+
+      "objects": "ignore",
+
+    }],
     "template-curly-spacing": "off",
     "indent": ["error", 2, {
       "ignoredNodes": ["TemplateLiteral"]

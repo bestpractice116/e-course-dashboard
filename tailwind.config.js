@@ -5,11 +5,9 @@ module.exports = {
     extend: {
       colors: {
         inherit: 'inherit'
-
       },
       borderWidth: {
         donut: "24px"
-
       },
       margin: {
         '18': '4.5rem',
@@ -17,12 +15,14 @@ module.exports = {
       },
       minHeight: {
         '10': '350px',
-
       },
       backgroundColor: theme => ({
         ...theme('colors'),
         'inputGray': '#F8F9FD',
         'summarybg': '#F5F6FA',
+      }),
+      backgroundImage: theme => ({
+        'sign': "url('/assets/illustrations/sign.jpg')",
       }),
       spacing: {
         '88': '22rem',
@@ -51,6 +51,24 @@ module.exports = {
         logoblue: "#3E9AED",
         textBlue: "#10214C",
         linkBlue: "#429EF1",
+      },
+      animation: {
+        pulse: 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+      },
+      keyframes: {
+        pulse: {
+          "0%, 100%": {
+            opacity: 0.2,
+          },
+          "50%": {
+            opacity: 1,
+          }
+        }
+      },
+      boxShadow: {
+        inputNormal: '0 0 0 3px #b7d7f9',
+        inputValid: '0 0 0 2px #20D300',
+        inputInvalid: '0 0 0 2px #CE2400',
       }
     },
   },

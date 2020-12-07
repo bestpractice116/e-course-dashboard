@@ -5,6 +5,9 @@ import router from "./router";
 import store from "./store";
 import '@/assets/css/tailwind.css'
 
+import Vuelidate from 'vuelidate'
+Vue.use(Vuelidate);
+
 import VueApexCharts from 'vue-apexcharts'
 Vue.use(VueApexCharts);
 

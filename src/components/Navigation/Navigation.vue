@@ -18,10 +18,10 @@
       </div>
 
       <div class="mb-8">
-        <router-link to="/logout" exact class="flex items-center justify-center xl:justify-start font-medium py-1 px-2 xl:py-3 xl:px-6 text-navGray">
+        <a @click.prevent="logout" href="#" class="flex items-center justify-center xl:justify-start font-medium py-1 px-2 xl:py-3 xl:px-6 text-navGray">
           <IconDynamic icon="logout" />
           <span class="ml-2 hidden xl:block">Logout</span>
-        </router-link>
+        </a>
       </div>
 
     </div>
@@ -37,6 +37,11 @@ export default {
   mixins: [items],
   components: {
     IconDynamic,
+  },
+  methods: {
+    logout() {
+      this.$store.dispatch("logout");
+    },
   },
 };
 </script>
