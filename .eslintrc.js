@@ -15,9 +15,7 @@ module.exports = {
     "linebreak-style": "off",
     "eol-last": ["error", "never"],
     "comma-dangle": ["error", {
-
       "objects": "ignore",
-
     }],
     "template-curly-spacing": "off",
     "indent": ["error", 2, {

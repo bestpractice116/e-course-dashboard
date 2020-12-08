@@ -33,7 +33,8 @@ export default {
         } else {
           commit("setToken", token);
           let timerSecond = +expirationDate - time;
-          console.log("timerSecond", timerSecond);
+
+
           dispatch("setTimeoutTimer", timerSecond);
           router.push("/");
         }
