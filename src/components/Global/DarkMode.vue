@@ -1,5 +1,5 @@
 <template>
-  <div class="dark-mode-box">
+  <div class="dark-mode-box text-black dark:text-white">
     <IconDynamic icon="light" />
     <label for="modecheckbox" class="checkbox-input">
       <input type="checkbox" name="checkbox" id="modecheckbox" @click="modeActive" v-model="checked" />
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import IconDynamic from "../../Global/IconDynamic.vue";
+import IconDynamic from "../Global/IconDynamic.vue";
 export default {
   name: "DarkModeButton",
   components: {

@@ -6,6 +6,9 @@ module.exports = {
       colors: {
         inherit: 'inherit'
       },
+      transitionProperty: {
+        'colors': 'background-color, color',
+      },
       borderWidth: {
         donut: "24px"
       },
@@ -66,9 +69,10 @@ module.exports = {
         }
       },
       boxShadow: {
-        inputNormal: '0 0 0 3px #b7d7f9',
-        inputValid: '0 0 0 2px #20D300',
-        inputInvalid: '0 0 0 2px #CE2400',
+        inputNormal: '0 0 0 4px #b7d7f9',
+        inputNormalDark: '0 0 0 4px #0c5299',
+        inputValid: '0 0 0 3px #20D300',
+        inputInvalid: '0 0 0 3px #CE2400',
       }
     },
   },

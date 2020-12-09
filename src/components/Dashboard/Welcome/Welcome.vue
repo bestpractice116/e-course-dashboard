@@ -8,19 +8,19 @@
 
       </div>
     </div>
-    <DarkModeButton />
+    <DarkMode />
   </div>
 
 </template>
 
 <script>
 import Avatar from "../../Global/Avatar.vue";
-import DarkModeButton from "./DarkModeButton.vue";
+import DarkMode from "../../Global/DarkMode.vue";
 export default {
   name: "DashboardWelcome",
   components: {
     Avatar,
-    DarkModeButton,
+    DarkMode,
   },
   computed: {
     userName() {
