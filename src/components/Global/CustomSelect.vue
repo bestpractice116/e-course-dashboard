@@ -5,7 +5,7 @@
     <div class="flex flex-col relative">
 
       <div @click="clickedMenu" :class="{'hidden':isActive}" class="flex justify-between items-center px-4 py-1.5 text-sm cursor-pointer text-black bg-gray-200 rounded-md relative">
-        <p class="font-semibold">{{selectedItem}}</p>
+        <p class="font-semibold select-none">{{selectedItem}}</p>
         <IconDynamic icon="arrowDown" :class="{ 'transform rotate-180': isActive }" />
       </div>
 
@@ -14,9 +14,9 @@
       </div>
 
       <div class="option-container absolute z-50 bg-gray-200 text-black w-full transition-all duration-200 rounded-b-md" :class="{ ' max-h-72 opacity-1 overflow-y-auto mt-12' : isActive,'max-h-0 opacity-0 overflow-hidden':!isActive }">
-        <div @click="selectItem(item.id,item.text)" :class="{'hidden':item.text.toLowerCase().indexOf(searchText.toLowerCase())==-1}" class="hover:bg-gray-100 px-4 py-2.5 cursor-pointer" v-for="(item,index) in datas" :key="index">
-          <input type="radio" class="radio mr-2 hidden" :id="item.id" name="category">
-          <label class="cursor-pointer" :for="item.id">{{item.text}}</label>
+        <div @click="selectItem(item)" :class="{'hidden':item.toLowerCase().indexOf(searchText.toLowerCase())==-1}" class="hover:bg-gray-100 px-4 py-2.5 cursor-pointer" v-for="(item,index) in getDropdownDatas" :key="index">
+          <input type="radio" class="radio mr-2 hidden" :id="item" name="category">
+          <label class="cursor-pointer select-none" :for="item">{{item}}</label>
         </div>
       </div>
 
@@ -32,7 +32,7 @@ export default {
     IconDynamic,
   },
   props: {
-    datas: {
+    dropdownDatas: {
       type: Array,
       require: true,
     },
@@ -43,10 +43,15 @@ export default {
   },
   data() {
     return {
-      selectedItem: "",
+      selectedItem: "All",
       isActive: false,
       searchText: "",
     };
+  },
+  computed: {
+    getDropdownDatas() {
+      return ["All", ...this.dropdownDatas];
+    },
   },
   methods: {
     clickedMenu() {
@@ -54,10 +59,10 @@ export default {
       this.searchText = "";
       this.$refs.search.focus();
     },
-    selectItem(id, text) {
+    selectItem(text) {
       this.selectedItem = text;
       this.isActive = false;
-      this.$emit("selectedItem", id);
+      this.$emit("selectedItem", text);
     },
     close(e) {
       if (!this.$el.contains(e.target)) {
@@ -70,9 +75,6 @@ export default {
   },
   beforeDestroy() {
     document.removeEventListener('click', this.close);
-  },
-  created() {
-    this.selectedItem = this.datas[0].text;
   },
 };
 </script>

@@ -1,8 +1,14 @@
 <template>
   <div>
-    <img :src="photo" :alt="courseName">
+    <router-link to="/course">
+      <img :src="photo" :alt="courseName">
+    </router-link>
+
     <div class="p-2">
-      <h2 class="font-semibold text-lg">{{courseName}}</h2>
+      <router-link to="/course">
+        <h2 class="font-semibold text-lg">{{courseName}}</h2>
+      </router-link>
+
       <p class="text-gray-800 dark:text-gray-100">{{courseDescription}}</p>
       <p>{{teacherName}}</p>
     </div>

@@ -2,8 +2,8 @@
   <div class="flex flex-col gap-4">
 
     <div class="flex justify-between items-center gap-8 pb-4 w-full">
-      <CustomSelect class="w-1/2" :datas="categories" dropdownTitle="Course Topics" @selectedItem="selectedItemReceived" />
-      <TailwindSelect class="w-1/2" :datas="teachers" />
+      <CustomSelect class="w-1/2" :dropdownDatas="getCourseTopics" dropdownTitle="Course Topics" @selectedItem="selectedItemReceived" />
+      <TailwindSelect class="w-1/2" :dropdownDatas="getTeachersForDropdown" />
 
     </div>
     <DetailDropdown class="w-1/3" :datas="people" />
@@ -12,8 +12,8 @@
     <p>{{selectedTopic}}</p>
 
     <div class="flex justify-between flex-wrap">
-      <div v-for="(course,index) in courses" :key="index" class="course border">
-        <CourseBox :photo="course.photo" :courseName="course.courseName" :courseDescription="course.courseDescription" :teacherName="course.teacher" />
+      <div v-for="(course,index) in courseDatas" :key="index" class="course border">
+        <CourseBox :photo="course.course_photo" :courseName="course.name" :courseDescription="course.description" :teacherName="course.teacher" />
       </div>
     </div>
 
@@ -26,6 +26,7 @@ import CustomSelect from "../Global/CustomSelect.vue";
 import TailwindSelect from "../Global/TailwindSelect.vue";
 import DetailDropdown from "../Global/DetailDropdown.vue";
 import CourseBox from "./CourseBox.vue";
+import coursesDatas from "../../assets/courses.json"
 export default {
   name: "CourseContainer",
   components: {
@@ -36,48 +37,7 @@ export default {
   },
   data() {
     return {
-      categories: [
-        {
-          id: "all",
-          text: "All",
-        },
-        {
-          id: "automobiles",
-          text: "Automobiles",
-        },
-        {
-          id: "film",
-          text: "Film & Anmation",
-        },
-        {
-          id: "science",
-          text: "Science & Technology",
-        },
-        {
-          id: "art",
-          text: "Art",
-        },
-        {
-          id: "music",
-          text: "Music",
-        },
-        {
-          id: "travel",
-          text: "Travel & Events",
-        },
-        {
-          id: "sports",
-          text: "Sports",
-        },
-        {
-          id: "news",
-          text: "News & Politics",
-        },
-        {
-          id: "tutorials",
-          text: "Tutorials",
-        }
-      ],
+      courseDatas: coursesDatas["courses"],
       teachers: [
         {
           name: "Tim Cook",
@@ -121,71 +81,34 @@ export default {
           photo: "https://avatars3.githubusercontent.com/u/196477?s=40&v=4",
         }
       ],
-      courses: [
-        {
-          photo: "https://kidsmartapp.co.uk/content/wp-content/uploads/2019/07/maths-chalkboard-1.jpg",
-          courseName: "Math",
-          courseDescription: "Matematik",
-          teacher: "Tom Cook",
-        },
-        {
-          photo: "https://kidsmartapp.co.uk/content/wp-content/uploads/2019/07/maths-chalkboard-1.jpg",
-          courseName: "Math",
-          courseDescription: "Matematik",
-          teacher: "Tom Cook",
-        },
-        {
-          photo: "https://kidsmartapp.co.uk/content/wp-content/uploads/2019/07/maths-chalkboard-1.jpg",
-          courseName: "Math",
-          courseDescription: "Matematik",
-          teacher: "Tom Cook",
-        },
-        {
-          photo: "https://kidsmartapp.co.uk/content/wp-content/uploads/2019/07/maths-chalkboard-1.jpg",
-          courseName: "Math",
-          courseDescription: "Matematik",
-          teacher: "Tom Cook",
-        },
-        {
-          photo: "https://kidsmartapp.co.uk/content/wp-content/uploads/2019/07/maths-chalkboard-1.jpg",
-          courseName: "Math",
-          courseDescription: "Matematik",
-          teacher: "Tom Cook",
-        },
-        {
-          photo: "https://kidsmartapp.co.uk/content/wp-content/uploads/2019/07/maths-chalkboard-1.jpg",
-          courseName: "Math",
-          courseDescription: "Matematik",
-          teacher: "Tom Cook",
-        },
-        {
-          photo: "https://kidsmartapp.co.uk/content/wp-content/uploads/2019/07/maths-chalkboard-1.jpg",
-          courseName: "Math",
-          courseDescription: "Matematik",
-          teacher: "Tom Cook",
-        },
-        {
-          photo: "https://kidsmartapp.co.uk/content/wp-content/uploads/2019/07/maths-chalkboard-1.jpg",
-          courseName: "Math",
-          courseDescription: "Matematik",
-          teacher: "Tom Cook",
-        },
-        {
-          photo: "https://kidsmartapp.co.uk/content/wp-content/uploads/2019/07/maths-chalkboard-1.jpg",
-          courseName: "Math",
-          courseDescription: "Matematik",
-          teacher: "Tom Cook",
-        }
-      ],
       selectedTopic: "",
     }
+  },
+  computed: {
+    getCourseTopics() {
+      return this.courseDatas.map(e => e.name);
+    },
+    getTeachers() {
+      return this.courseDatas.map((
+        { teacher, teacher_photo }) => ({ teacher, teacher_photo }))
+    },
+    getTeachersForDropdown() {
+      let teachers = [];
+      this.getTeachers.forEach((el) => {
+        teachers.push({ name: el.teacher, photo: el.teacher_photo });
+      });
+      return teachers;
+    },
   },
   methods: {
     selectedItemReceived(item) {
       this.selectedTopic = item;
     }
   },
-
+  created() {
+    console.log(this.courseDatas.map((
+      { teacher, teacher_photo }) => ({ teacher, teacher_photo })));
+  }
 }
 </script>
 
