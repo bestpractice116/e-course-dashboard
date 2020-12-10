@@ -10,7 +10,7 @@
 
     <h1 class="font-bold text-xl mb-6">Notifications</h1>
 
-    <div v-for="(item,index) in notifications" :key="index">
+    <div v-for="(item,index) in notifications" :key="index" class="">
       <NotificationBox v-if="item.type === 'course_data_ready'" :name="item.name" message="Your data is ready and you can see it now" :date="item.date" iconName="graph" iconcolor="text-purple-400" bgcolor="bg-purple-100" />
 
       <NotificationBox v-if="item.type === 'invitation'" :name="item.name" :person="item.person" message="invites to join the challange" :date="item.date" iconName="user" iconcolor="text-blue-400" bgcolor="bg-blue-50">

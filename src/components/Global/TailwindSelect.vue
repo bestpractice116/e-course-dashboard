@@ -1,12 +1,12 @@
 <template>
-  <div class="w-full">
+  <div class="">
     <label id="listbox-label" class="block text-sm font-medium mb-1 ml-1 text-gray-700 dark:text-gray-200">
       Teacher
     </label>
 
     <div class="mt-1 relative">
 
-      <button @click="clickMenu" type="button" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label" class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-pointer focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+      <button @click="clickMenu" type="button" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label" class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-1.5 text-left cursor-pointer focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
         <span class="flex items-center">
           <img :src="selectedPhoto" alt="" class="flex-shrink-0 h-6 w-6 rounded-full">
           <span class="ml-3 block truncate text-black dark:text-black">

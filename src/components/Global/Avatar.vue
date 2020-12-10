@@ -1,6 +1,6 @@
 <template>
   <figure>
-    <img :src="src" :alt="src" :width="size" :height="size" class="rounded-full">
+    <img :src="src" :alt="src" :width="size" :height="size" class="flex-shrink rounded-full">
   </figure>
 </template>
 

@@ -9,7 +9,7 @@
       <span class="mr-8">Points</span>
     </div>
 
-    <div v-if="showLess" class="animate-pulse" style="animationDelay:1000ms; animationFillMode:'backwards';">
+    <div v-if="showLess">
       <div v-for="(person,index) in ranks" :key="index">
         <template v-if="index < 3">
           <RankPerson class="mb-6" :avatar="person.avatar" :index="index" :name="person.name" :point="person.point" />
@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <div v-else class="animate-pulse" style="animationDelay:1000ms; animationFillMode:'backwards';">
+    <div v-else>
       <div v-for="(person,index2) in ranks" :key="index2">
         <RankPerson class="mb-6" :avatar="person.avatar" :index="index2" :name="person.name" :point="person.point" />
       </div>

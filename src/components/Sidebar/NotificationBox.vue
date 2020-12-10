@@ -5,7 +5,7 @@
       <IconDynamic :icon="iconName" :class="iconcolor" />
     </div>
 
-    <div class="ml-4 border-b-2 border-gray-100 w-full">
+    <div class="ml-4 border-b border-gray-200 w-full">
       <h4 class="font-bold">{{name}}</h4>
       <p class="text-gray-500 dark:text-gray-200 text-sm mt-0.5 mb-2"><span class="font-medium text-black dark:text-white">{{person}}</span> {{message}}</p>
       <slot name="buttons"></slot>

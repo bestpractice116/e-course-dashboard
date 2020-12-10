@@ -6,7 +6,7 @@
       <router-view></router-view>
     </main>
 
-    <Sidebar class="min-h-screen hidden 2xl:block border-l border-purple-100" />
+    <Sidebar class="h-screen sticky top-0 hidden 2xl:block border-l border-purple-100" />
   </div>
 </template>
 
