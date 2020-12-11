@@ -11,12 +11,12 @@ export const items = {
           icon: "courses",
         },
         {
-          name: "Schedule",
-          icon: "schedule",
-        },
-        {
           name: "Friends",
           icon: "friends",
+        },
+        {
+          name: "Schedule",
+          icon: "schedule",
         },
         {
           name: "Message",

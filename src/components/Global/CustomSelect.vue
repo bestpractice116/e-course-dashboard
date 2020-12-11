@@ -10,7 +10,7 @@
       </div>
 
       <div class="">
-        <input v-model="searchText" ref="search" type="text" placeholder="Start Typing..." :class="{'opacity-1 pointer-events-auto':isActive,'opacity-0 pointer-events-none':!isActive}" class="transition-all duration-200 w-full px-2.5 py-1.5 mb-1 rounded-md absolute z-50 border border-gray-300 focus:outline-none">
+        <input v-model.trim="searchText" ref="search" type="text" placeholder="Start Typing..." :class="{'opacity-1 pointer-events-auto':isActive,'opacity-0 pointer-events-none':!isActive}" class="transition-all duration-200 w-full px-2.5 py-1.5 mb-1 rounded-md absolute z-50 border border-gray-300 focus:outline-none">
       </div>
 
       <div class="option-container absolute z-50 bg-gray-200 text-black w-full transition-all duration-200 rounded-b-md" :class="{ ' max-h-72 opacity-1 overflow-y-auto mt-12' : isActive,'max-h-0 opacity-0 overflow-hidden':!isActive }">

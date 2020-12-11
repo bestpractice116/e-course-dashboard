@@ -6,6 +6,11 @@ module.exports = {
       colors: {
         inherit: 'inherit'
       },
+      flex: {
+        'thirdDesktop': '0 0 31%',
+        'thirdTablet': '0 0 48%',
+        'thirdMobile': '0 0 98%',
+      },
       transitionProperty: {
         'colors': 'background-color, color',
       },

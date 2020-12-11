@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <label id="listbox-label" class="block text-sm font-medium mb-1 ml-1 text-gray-700 dark:text-gray-200">
-      Teacher
+      {{dropdownTitle}}
     </label>
 
     <div class="mt-1 relative">
@@ -52,6 +52,10 @@ export default {
     dropdownDatas: {
       type: Array,
       required: true,
+    },
+    dropdownTitle: {
+      type: String,
+      require: true,
     }
   },
   data() {
@@ -78,6 +82,7 @@ export default {
       this.selectedName = name;
       this.selectedPhoto = photo;
       this.isActive = false;
+      this.$emit("selectedItem", name);
     },
     mouseOvered(name) {
       this.mouseOverName = name;

@@ -3,15 +3,9 @@
 </template>
 
 <script>
-// import SignUp from "./components/Sign/SignUp.vue";
-// import SignIn from "./components/Sign/SignIn.vue";
 import { mapGetters } from "vuex";
 export default {
   name: "App",
-  components: {
-    // SignUp,
-    // SignIn,
-  },
   created() {
     // initAuth
     this.$store.dispatch("initAuth");

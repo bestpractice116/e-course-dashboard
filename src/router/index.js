@@ -27,7 +27,7 @@ const routes = [
       if (store.getters.isAuthenticated) {
         next()
       } else {
-        next("/signup")
+        next({ name: 'SignUp' })
       }
     },
     children: [

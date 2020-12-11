@@ -14,7 +14,7 @@
         -->
       </header>
       <div class="container-filter p-2.5 border-b border-gray-200">
-        <input type="text" placeholder="Filter users" v-model="searchText" class="w-full px-2 py-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50">
+        <input type="text" placeholder="Filter users" v-model.trim="searchText" class="w-full px-2 py-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50">
       </div>
 
       <div class="container-list text-xs">

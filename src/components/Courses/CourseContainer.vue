@@ -2,19 +2,31 @@
   <div class="flex flex-col gap-4">
 
     <div class="flex justify-between items-center gap-8 pb-4 w-full">
-      <CustomSelect class="w-1/2" :dropdownDatas="getCourseTopics" dropdownTitle="Course Topics" @selectedItem="selectedItemReceived" />
-      <TailwindSelect class="w-1/2" :dropdownDatas="getTeachersForDropdown" />
+      <CustomSelect class="w-1/2" :dropdownDatas="getCourseTopics" dropdownTitle="Course Topics" @selectedItem="selectedTopicReceived" />
+      <TailwindSelect class="w-1/2" :dropdownDatas="getTeachersForDropdown" dropdownTitle="Teachers" @selectedItem="selectedTeacherReceived" />
 
     </div>
     <DetailDropdown class="w-1/3" :datas="people" />
 
     <p class="text-xs">no js on dropdown except filter</p>
     <p>{{selectedTopic}}</p>
+    <p>{{selectedTeacher}}</p>
 
-    <div class="flex justify-between flex-wrap">
-      <div v-for="(course,index) in courseDatas" :key="index" class="course border">
-        <CourseBox :photo="course.course_photo" :courseName="course.name" :courseDescription="course.description" :teacherName="course.teacher" />
-      </div>
+    <div class="flex gap-4 flex-wrap justify-center md:justify-around lg:justify-start">
+      <template v-for="(course,index) in courseDatas">
+        <div :key="index + 1" v-if="selectedTopic === 'All' && selectedTeacher === 'All'" class="flex-thirdMobile md:flex-thirdTablet lg:flex-thirdDesktop border mb-4 rounded-md overflow-hidden">
+          <CourseBox :photo="course.course_photo" :courseName="course.name" :courseDescription="course.description" :teacherName="course.teacher" />
+        </div>
+        <div :key="index + 2" v-if="selectedTopic !== 'All' && selectedTeacher === 'All'" :class="{'hidden':selectedTopic !== course.name}" class="flex-thirdMobile md:flex-thirdTablet lg:flex-thirdDesktop border mb-4 rounded-md overflow-hidden">
+          <CourseBox :photo="course.course_photo" :courseName="course.name" :courseDescription="course.description" :teacherName="course.teacher" />
+        </div>
+        <div :key="index + 3" v-if="selectedTopic === 'All' && selectedTeacher !== 'All'" :class="{'hidden':selectedTeacher !== course.teacher}" class="flex-thirdMobile md:flex-thirdTablet lg:flex-thirdDesktop border mb-4 rounded-md overflow-hidden">
+          <CourseBox :photo="course.course_photo" :courseName="course.name" :courseDescription="course.description" :teacherName="course.teacher" />
+        </div>
+        <div :key="index + 4" v-if="selectedTopic !== 'All' && selectedTeacher !== 'All'" :class="{'hidden':selectedTopic !== course.name || selectedTeacher !== course.teacher}" class="flex-thirdMobile md:flex-thirdTablet lg:flex-thirdDesktop border mb-4 rounded-md overflow-hidden">
+          <CourseBox :photo="course.course_photo" :courseName="course.name" :courseDescription="course.description" :teacherName="course.teacher" />
+        </div>
+      </template>
     </div>
 
   </div>
@@ -81,12 +93,13 @@ export default {
           photo: "https://avatars3.githubusercontent.com/u/196477?s=40&v=4",
         }
       ],
-      selectedTopic: "",
+      selectedTopic: "All",
+      selectedTeacher: "All",
     }
   },
   computed: {
     getCourseTopics() {
-      return this.courseDatas.map(e => e.name);
+      return [...new Set(this.courseDatas.map(e => e.name))];
     },
     getTeachers() {
       return this.courseDatas.map((
@@ -99,10 +112,16 @@ export default {
       });
       return teachers;
     },
+    isHideCourse() {
+      return this.selectedTopic !== 'All' && this.selectedTeacher !== 'All';
+    }
   },
   methods: {
-    selectedItemReceived(item) {
+    selectedTopicReceived(item) {
       this.selectedTopic = item;
+    },
+    selectedTeacherReceived(item) {
+      this.selectedTeacher = item;
     }
   },
   created() {
@@ -114,8 +133,4 @@ export default {
 
 
 <style scoped>
-.course {
-  flex: 0 0 30%;
-  margin-bottom: 14px;
-}
 </style>

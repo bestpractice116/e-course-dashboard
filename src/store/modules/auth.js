@@ -31,15 +31,17 @@ export default {
         if (time >= +expirationDate) {
           dispatch("logout");
         } else {
+          router.go(-1);
           commit("setToken", token);
           let timerSecond = +expirationDate - time;
 
-
           dispatch("setTimeoutTimer", timerSecond);
-          router.push("/");
+
+          /*
+          console.log(this.$router.currentRoute.path);
+          router.push({ path: this.$router.currentRoute.path });
+          */
         }
-      } else {
-        // router.push("signup");
       }
 
       let email = localStorage.getItem("email");
@@ -50,7 +52,7 @@ export default {
       }
     },
 
-    register({ commit, dispatch, state }, authData) {
+    register({ state }, authData) {
       axios
         .post(
           "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" + state.firebaseAPIKey,
@@ -61,7 +63,6 @@ export default {
           }
         )
         .then((response) => {
-          console.log(response);
           router.push({ path: "signin" });
         });
     },
@@ -86,10 +87,8 @@ export default {
             localStorage.setItem("email", response.data.email);
 
             localStorage.setItem("expirationDate", new Date().getTime() + +response.data.expiresIn * 1000);
-            // localStorage.setItem("expirationDate", new Date().getTime() + 10000);
 
             dispatch("setTimeoutTimer", +response.data.expiresIn * 1000); // send 3600s
-            // dispatch("setTimeoutTimer", 10000);
 
             router.push({ path: "/" });
           })
@@ -104,9 +103,9 @@ export default {
       localStorage.removeItem("email");
       localStorage.removeItem("expirationDate");
 
-      router.push("/signin");
+      router.push({ path: "/signin" });
     },
-    // 15 sn sonra logout ol
+
     setTimeoutTimer({ dispatch }, expiresIn) {
       setTimeout(() => {
         dispatch("logout");
