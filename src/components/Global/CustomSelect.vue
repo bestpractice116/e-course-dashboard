@@ -1,6 +1,7 @@
 <template>
-  <div class="inline-block h-full">
-    <h2 class="text-gray-700 dark:text-gray-200 font-medium ml-1 mb-1 text-sm">{{dropdownTitle}}</h2>
+  <div class="">
+
+    <h2 class="text-gray-700 dark:text-gray-200 font-medium ml-1 mb-1 text-sm">{{title}}</h2>
 
     <div class="flex flex-col relative">
 
@@ -32,11 +33,11 @@ export default {
     IconDynamic,
   },
   props: {
-    dropdownDatas: {
+    datas: {
       type: Array,
       require: true,
     },
-    dropdownTitle: {
+    title: {
       type: String,
       require: true,
     }
@@ -50,7 +51,7 @@ export default {
   },
   computed: {
     getDropdownDatas() {
-      return ["All", ...this.dropdownDatas];
+      return ["All", ...this.datas];
     },
   },
   methods: {
